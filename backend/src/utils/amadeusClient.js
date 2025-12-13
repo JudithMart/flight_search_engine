@@ -8,28 +8,76 @@ import dotenv from "dotenv"
 dotenv.config();
 
 const API_KEY = process.env.AMADEUS_API_KEY;
-const API_SECRET = process.env.AMADEUS_API_SECRET
+const API_SECRET = process.env.AMADEUS_API_SECRET;
 
-async function getAccessToken(){
-    return "TOKEN"
+let cachedToken = null;
+let tokenExpiration = null;
+
+async function getAccessToken() {
+
+  const now = Date.now;
+
+  if (cachedToken && tokenExpiration && now < tokenExpiration) {
+    return cachedToken
+  }
+
+  const response = await axios.post(
+    "https://test.api.amadeus.com/v1/security/oauth2/token",
+    new URLSearchParams({
+      grant_type: "client_credentials",
+      client_id: API_KEY,
+      client_secret: API_SECRET,
+    })
+
+  );
+
+  cachedToken = response.data.access_token;
+  tokenExpiration = now + (response.data.expires_in * 1000);
+
+  return cachedToken;
+
+
 }
+export { getAccessToken };
+
+
 
 // Llamar búsqueda de vuelos
-export async function searchInAmadeus(params) {
-  // Si quieres usar mock mientras avanzas:
-  // const mockData = await fs.readFile("./src/mock/amadeus.json", "utf8");
-  // return JSON.parse(mockData);
+export async function searchInAmadeus({ origin, destination, date, sort }) {
 
-  // En producción usarás la API real
   const token = await getAccessToken();
 
-  // Luego harás GET a flight-offers
-  // Por ahora regresamos un objeto vacío para que no truene.
-  return { data: [] };
+  const params = {
+    originLocationCode: origin,
+    destinationLocationCode: destination,
+    departureDate: date,
+    adults: 1,
+    max: 20,
+  };
+  
+
+  try {
+    const response = await axios.get(
+      "https://test.api.amadeus.com/v2/shopping/flight-offers",
+      {
+        params,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 8000,
+      }
+    );
+   
+    return response.data;
+  }
+  catch (err) {
+    console.error("Error al buscar en Amadeus:", err.response?.data || err.message);
+
+    throw new Error("Amadeus request failed");
+  }
+
 }
 
-// Obtener detalles de un vuelo
 export async function getAmadeusFlight(id) {
-  // Por ahora regresa vacío
-  return {};
+  return { message: "Flight detail endpoint TBD", id };
 }

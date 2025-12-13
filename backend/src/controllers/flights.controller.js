@@ -26,7 +26,7 @@ export async function searchFlights(req, res){
         console.error("Error en searchFlights: ", err )
 
         return res.status(500).json({
-            error: "Server error",
+            error: "Server error searchFlights ",
             message: err.message,
 
         })
@@ -50,7 +50,7 @@ export async function getFlightDetails(req, res){
         console.error("Error en getFlightsDetails: ", err )
 
         return res.status(500).json({
-            error: "Server error",
+            error: "Server error FlightDetails",
             message: err.message,
 
         })
