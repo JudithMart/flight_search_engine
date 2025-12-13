@@ -54,7 +54,7 @@ export async function searchInAmadeus({ origin, destination, date, sort }) {
     adults: 1,
     max: 20,
   };
-  
+
 
   try {
     const response = await axios.get(
@@ -67,13 +67,18 @@ export async function searchInAmadeus({ origin, destination, date, sort }) {
         timeout: 8000,
       }
     );
-   
+
     return response.data;
   }
   catch (err) {
     console.error("Error al buscar en Amadeus:", err.response?.data || err.message);
+    console.warn("Amadeus sandbox error, using mock data");
 
-    throw new Error("Amadeus request failed");
+    const mock = await fs.readFile("./src/mock/amadeus.json", "utf8");
+    return JSON.parse(mock);
+
+    // throw new Error("Amadeus request failed");
+
   }
 
 }
