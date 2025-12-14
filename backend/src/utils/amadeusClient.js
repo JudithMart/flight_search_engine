@@ -77,7 +77,6 @@ export async function searchInAmadeus({ origin, destination, date, sort }) {
     const mock = await fs.readFile("./src/mock/amadeus.json", "utf8");
     return JSON.parse(mock);
 
-    // throw new Error("Amadeus request failed");
 
   }
 

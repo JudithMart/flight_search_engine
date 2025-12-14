@@ -11,6 +11,8 @@ export async function fetchFlights(params) {
     const flights = transformFlightOffers(rawData);
     const uniqueFlights = new Map();
 
+   
+
     flights.forEach(flight => {
         const key = `${flight.flight_number}-${flight.departure_time}`;
         if (!uniqueFlights.has(key)) {
@@ -18,7 +20,7 @@ export async function fetchFlights(params) {
         }
     });
 
-     const cleanFlights = Array.from(uniqueFlights.values());
+    const cleanFlights = Array.from(uniqueFlights.values());
 
 
     if (params.sort === "price") {
@@ -28,7 +30,8 @@ export async function fetchFlights(params) {
 
 
 
-   return cleanFlights;}
+    return cleanFlights;
+}
 
 
 
@@ -36,5 +39,5 @@ export async function fetchFlights(params) {
 export async function fetchFlightDetails(id) {
     const raw = await getAmadeusFlight(id)
 
-    return  transformSingleFlight(raw)
+    return transformSingleFlight(raw)
 }

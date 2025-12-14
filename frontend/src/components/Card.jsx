@@ -29,7 +29,7 @@ function Card({
       </div>
       <div className="text-center lg:text-left w-full lg:w-auto">
         <p className="  text-[#11325f] font-bold text-xl">
-          {scales}</p>
+          {scales} escala</p>
       </div>
       <div className="text-center lg:text-left w-full lg:w-auto ">
         <p className=" text-[#11325f] font-light text-base lg:text-xl">

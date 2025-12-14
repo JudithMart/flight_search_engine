@@ -72,8 +72,18 @@ function Home() {
     }
 
 
-    if (filters.scales) {
-      result = result.filter(flight => flight.scales === filters.scales);
+    if (filters.scales !== "") {
+      if (filters.scales === "0") {
+        result = result.filter(flight => flight.scales === 0);
+      }
+
+      if (filters.scales === "1") {
+        result = result.filter(flight => flight.scales === 1);
+      }
+
+      if (filters.scales === "2+") {
+        result = result.filter(flight => flight.scales >= 2);
+      }
     }
 
     if (filters.timeRange) {

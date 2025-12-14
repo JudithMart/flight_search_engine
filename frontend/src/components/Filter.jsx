@@ -31,9 +31,9 @@ function Filter({ filters, setFilters }) {
             className="w-full border border-gray-300 rounded-lg p-2 text-[#11325f] focus:ring-2 focus:ring-[#5161c0] focus:border-transparent"
           >
             <option value="">Todas</option>
-            <option value="Aeroméxico">Aeroméxico</option>
-            <option value="Volaris">Volaris</option>
-            <option value="VivaAerobus">VivaAerobus</option>
+            <option value="AM">Aeroméxico</option>
+            <option value="Y4">Volaris</option>
+            <option value="VB">VivaAerobus</option>
             <option value="Interjet">Interjet</option>
           </select>
         </div> 
@@ -66,9 +66,9 @@ function Filter({ filters, setFilters }) {
             className="w-full border border-gray-300 rounded-lg p-2 text-[#11325f] focus:ring-2 focus:ring-[#5161c0] focus:border-transparent"
           >
             <option value="">Todas</option>
-            <option value="Directo">Directo</option>
-            <option value="1 escala">1 escala</option>
-            <option value="2+ escalas">2+ escalas</option>
+            <option value="0">Directo</option>
+            <option value="1">1 escala</option>
+            <option value="2+">2+ escalas</option>
           </select>
         </div>
 
