@@ -6,7 +6,7 @@ function Card({
   return (
     <div className="bg-white w-full shadow-md shadow-[#3E4C99] rounded-xl mb-10
     flex flex-col lg:flex-row items-center justify-between p-6 gap-6  lg:gap-10">
-      <div className="text-center sm:text-left ">
+      <div className="text-center sm:text-left  ">
         <p className="text-[#11325f] font-bold  lg:text-xl text-base">
           {airline}</p>
         <p className=" text-[#11325f] font-light text-xl">
@@ -16,13 +16,13 @@ function Card({
         <div className="text-center sm:text-left">
           <p className=" text-[#11325f] font-bold text-xl">
             {origin}</p>
-          <p className=" ml-2 text-[#11325f] font-light text-xl">
+          <p className="  text-[#11325f] font-light text-xl">
             {d_time}</p>
         </div>
         <div className="text-center sm:text-left ">
           <p className=" text-[#11325f] font-bold text-xl  sm:text-left">
             {destination}</p>
-          <p className="px-6 text-[#11325f] font-light text-base lg:text-xl">
+          <p className=" text-[#11325f] font-light text-base lg:text-xl">
             {a_time}</p>
         </div>
 

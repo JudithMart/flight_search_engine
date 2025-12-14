@@ -28,7 +28,7 @@ function Box({ texto, value, onChange }) {
                 />
             ) : (
                 <input
-                    className="w-[calc(100%-1rem)] mx-2 h-[37px] bg-slate-100 rounded-md ml-2"
+                    className="w-[calc(100%-1rem)] mx-2 h-[37px] text-black font-normal bg-slate-100 rounded-md ml-2"
                     type="text"
                     value={value}
                     onChange={(e) => onChange(e.target.value)}

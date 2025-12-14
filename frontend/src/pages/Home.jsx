@@ -50,7 +50,7 @@ function Home() {
 
     } catch (err) {
       console.error(err)
-      setError("No se pudieron cargar los vuelos")
+      setError(null)
     } finally {
       setLoading(false)
     }
@@ -106,13 +106,9 @@ function Home() {
         </div>
 
         <div className="flex-1 max-w-4xl mx-auto w-full">
-          {loading && <p>Cargando vuelos...</p>}
-          {error && <p className="text-red-500">{error}</p>}
-          {!loading && filteredFlights.length > 0 && (
-            <p className="text-center text-gray-500">
-              No se encontraron vuelos con los filtros seleccionados
-            </p>
-          )}
+          {loading && <p  className="text-[#3E4C99] font-bold text-2xl" >Cargando vuelos...</p>}
+          {error && <p className="text-[#cf443f] font-bold text-2xl">{error}</p>}
+    
           {!loading && filteredFlights.map((flight, index) => (
             <Card
               key={index}
