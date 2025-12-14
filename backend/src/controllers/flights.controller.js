@@ -22,15 +22,15 @@ export async function searchFlights(req, res) {
         return res.status(200).json(flights)
 
     } catch (err) {
-        if (error.type === "EXTERNAL_API_ERROR") {
+        if (err.type === "EXTERNAL_API_ERROR") {
             return res.status(502).json({
                 error: "BAD_GATEWAY",
-                message: error.message
+                message: err.message
             });
         }
 
         return res.status(500).json({
-            error: "INTERNAL_SERVER_ERROR",
+            err: "INTERNAL_SERVER_ERROR",
             message: "Unexpected server error"
         });
     }

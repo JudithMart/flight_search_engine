@@ -42,7 +42,7 @@ export { getAccessToken };
 
 
 
-// Llamar búsqueda de vuelos
+
 export async function searchInAmadeus({ origin, destination, date, sort }) {
 
   const token = await getAccessToken();
