@@ -1,4 +1,3 @@
-//LÓGICA
 
 import { searchInAmadeus, getAmadeusFlight } from "../utils/amadeusClient.js";
 import { transformFlightOffers, transformSingleFlight } from "../utils/tranform.js";

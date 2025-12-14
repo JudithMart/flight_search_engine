@@ -1,6 +1,3 @@
-//INTERACCIÓN CON AMADEUS 
-//MENSAJERO ENTRE EL BACKEND Y AMADEUS 
-
 import axios from "axios"
 import fs from "fs/promises"
 import dotenv from "dotenv"

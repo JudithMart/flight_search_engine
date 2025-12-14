@@ -1,4 +1,3 @@
-import React from 'react'
 
 function Card({
   origin, destination, airline, n_flight, d_time, a_time, duration, cost, scales, currency

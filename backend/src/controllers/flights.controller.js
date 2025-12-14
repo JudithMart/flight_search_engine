@@ -1,7 +1,3 @@
-//LEER PARÁMETROS 
-//solo gestiona la entrada y salida.
-//valida parámetros 
-//recibe json 
 
 import { fetchFlights, fetchFlightDetails } from "../services/flights.service.js"
 

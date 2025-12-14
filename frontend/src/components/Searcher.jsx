@@ -5,10 +5,6 @@ import Box from './box_searcher/box'
 
 function Searcher({ searchParams, setSearchParams, onSearch }) {
 
-
-
-
-
     return (
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 p-3 items-stretch lg:items-center justify-center">
 

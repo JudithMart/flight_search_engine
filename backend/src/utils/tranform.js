@@ -1,3 +1,4 @@
+
 export function transformFlightOffers(rawData) {
   if (!rawData || !rawData.data) {
     return [];
