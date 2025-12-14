@@ -50,7 +50,9 @@ function Home() {
 
     } catch (err) {
       console.error(err)
-      setError(null)
+      setError("No se pudieron cargar los vuelos")
+      setFlights([])
+      setFilteredFlights([])
     } finally {
       setLoading(false)
     }
@@ -106,24 +108,31 @@ function Home() {
         </div>
 
         <div className="flex-1 max-w-4xl mx-auto w-full">
-          {loading && <p  className="text-[#3E4C99] font-bold text-2xl" >Cargando vuelos...</p>}
+          {loading && <p className="text-[#3E4C99] font-bold text-2xl" >Cargando vuelos...</p>}
           {error && <p className="text-[#cf443f] font-bold text-2xl">{error}</p>}
-    
-          {!loading && filteredFlights.map((flight, index) => (
-            <Card
-              key={index}
-              origin={flight.origin}
-              destination={flight.destination}
-              airline={flight.airline}
-              n_flight={flight.flight_number}
-              d_time={flight.departure_time}
-              a_time={flight.arrival_time}
-              duration={flight.duration}
-              cost={flight.price}
-              currency={flight.currency}
-              scales={flight.scales}
-            />
-          ))}
+
+          {!loading && !error && filteredFlights.length > 0 && (
+            filteredFlights.map((flight, index) => (
+              <Card
+                key={index}
+                origin={flight.origin}
+                destination={flight.destination}
+                airline={flight.airline}
+                n_flight={flight.flight_number}
+                d_time={flight.departure_time}
+                a_time={flight.arrival_time}
+                duration={flight.duration}
+                cost={flight.price}
+                currency={flight.currency}
+                scales={flight.scales}
+              />
+            ))
+          )}
+          {!loading && !error && filteredFlights.length === 0 && (
+            <p className="text-gray-500 text-center text-lg">
+              No se encontraron vuelos con los filtros seleccionados
+            </p>
+          )}
         </div>
 
 

@@ -30,7 +30,7 @@ export async function searchFlights(req, res) {
         }
 
         return res.status(500).json({
-            err: "INTERNAL_SERVER_ERROR",
+            error: "INTERNAL_SERVER_ERROR",
             message: "Unexpected server error"
         });
     }

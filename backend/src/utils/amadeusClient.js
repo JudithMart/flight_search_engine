@@ -15,7 +15,7 @@ let tokenExpiration = null;
 
 async function getAccessToken() {
 
-  const now = Date.now;
+  const now = Date.now();
 
   if (cachedToken && tokenExpiration && now < tokenExpiration) {
     return cachedToken

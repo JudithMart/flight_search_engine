@@ -1,131 +1,32 @@
 {
-    "data": [
+  "data": [
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "price": {
+        "currency": "EUR",
+        "total": "84.47"
+      },
+      "itineraries": [
         {
-            "type": "flight-offer",
-            "id": "1",
-            "source": "GDS",
-            "instantTicketingRequired": false,
-            "nonHomogeneous": false,
-            "oneWay": false,
-            "lastTicketingDate": "2022-09-28",
-            "numberOfBookableSeats": 9,
-            "itineraries": [
-                {
-                    "duration": "PT2H5M",
-                    "segments": [
-                        {
-                            "departure": {
-                                "iataCode": "MAD",
-                                "terminal": "2",
-                                "at": "2022-10-03T06:00:00"
-                            },
-                            "arrival": {
-                                "iataCode": "CDG",
-                                "terminal": "2F",
-                                "at": "2022-10-03T08:05:00"
-                            },
-                            "carrierCode": "AF",
-                            "number": "1401",
-                            "aircraft": {
-                                "code": "321"
-                            },
-                            "operating": {
-                                "carrierCode": "AF"
-                            },
-                            "duration": "PT2H5M",
-                            "id": "1",
-                            "numberOfStops": 0,
-                            "blacklistedInEU": false
-                        }
-                    ]
-                },
-                {
-                    "duration": "PT1H30M",
-                    "segments": [
-                        {
-                            "departure": {
-                                "iataCode": "CDG",
-                                "terminal": "2F",
-                                "at": "2022-10-05T07:55:00"
-                            },
-                            "arrival": {
-                                "iataCode": "MUC",
-                                "terminal": "1",
-                                "at": "2022-10-05T09:25:00"
-                            },
-                            "carrierCode": "AF",
-                            "number": "1422",
-                            "aircraft": {
-                                "code": "319"
-                            },
-                            "operating": {
-                                "carrierCode": "AF"
-                            },
-                            "duration": "PT1H30M",
-                            "id": "2",
-                            "numberOfStops": 0,
-                            "blacklistedInEU": false
-                        }
-                    ]
-                },
-                {
-                    "duration": "PT1H35M",
-                    "segments": [
-                        {
-                            "departure": {
-                                "iataCode": "MUC",
-                                "terminal": "1",
-                                "at": "2022-10-08T17:50:00"
-                            },
-                            "arrival": {
-                                "iataCode": "AMS",
-                                "at": "2022-10-08T19:25:00"
-                            },
-                            "carrierCode": "KL",
-                            "number": "1798",
-                            "aircraft": {
-                                "code": "73W"
-                            },
-                            "operating": {
-                                "carrierCode": "KL"
-                            },
-                            "duration": "PT1H35M",
-                            "id": "3",
-                            "numberOfStops": 0,
-                            "blacklistedInEU": false
-                        }
-                    ]
-                },
-                {
-                    "duration": "PT2H35M",
-                    "segments": [
-                        {
-                            "departure": {
-                                "iataCode": "AMS",
-                                "at": "2022-10-11T17:00:00"
-                            },
-                            "arrival": {
-                                "iataCode": "MAD",
-                                "terminal": "2",
-                                "at": "2022-10-11T19:35:00"
-                            },
-                            "carrierCode": "KL",
-                            "number": "148",
-                            "aircraft": {
-                                "code": "E90"
-                            },
-                            "duration": "PT2H35M",
-                            "id": "4",
-                            "numberOfStops": 0,
-                            "blacklistedInEU": false
-                        }
-                    ]
-                }
-            ],
-            "price": {
-                "currency": "EUR",
-                "total": "84.47"
+          "duration": "PT2H10M",
+          "segments": [
+            {
+              "carrierCode": "AM",
+              "number": "456",
+              "departure": {
+                "iataCode": "MEX",
+                "at": "2026-01-10T08:00:00"
+              },
+              "arrival": {
+                "iataCode": "CUN",
+                "at": "2026-01-10T10:10:00"
+              }
             }
+          ]
         }
-    ]
+      ],
+      "numberOfBookableSeats": 5
+    }
+  ]
 }
