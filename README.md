@@ -58,50 +58,84 @@ src/
 ```
 ---
 ## Flujo de la aplicación
- - **Usuario ingresa:**
- - Origen (IATA)
- - Destino (IATA)
- - Fecha
- - **Frontend hace request al backend**
-- **Backend**
- - Valida parámetros
- - Consulta Amadeus
- - Si falla → usa mock
- - Datos se transforman a formato estándar
-- **Frontend**
- - Renderiza cards
- - Aplica filtros locales
-- **Validaciones**
-- Backend 
-- Campos obligatorios
-- Códigos IATA válidos (3 letras)
+
+### Usuario
+- Ingresa:
+  - Origen (IATA)
+  - Destino (IATA)
+  - Fecha
+- El frontend realiza una petición al backend.
+
+### Backend
+- Valida los parámetros de entrada.
+- Consulta la API de Amadeus.
+  - Si falla, utiliza datos simulados (mock).
+- Transforma los datos a un formato estándar.
+
+### Frontend
+- Renderiza las tarjetas de vuelos.
+- Aplica filtros locales.
+
+---
+
+## Validaciones
+
+### Backend
+- Campos obligatorios.
+- Códigos IATA válidos (3 letras).
 - Manejo de errores HTTP:
- - -400 Bad Request
- - -502 Bad Gateway
- - -500 Internal Server Error
-- **Testing**
-- Se implementaron tests unitarios usando Jest para:
- - Transformación de datos (transformFlightOffers)
- - Validación de escalas
- - Validación de duración
- - Controladores (mockeando services) -
- - Ejecutar test **npm run test**
+  - `400 Bad Request`
+  - `502 Bad Gateway`
+  - `500 Internal Server Error`
+
+---
+
+## Testing
+
+Se implementaron tests unitarios usando **Jest** para:
+- Transformación de datos (`transformFlightOffers`)
+- Validación de escalas
+- Validación de duración
+- Controladores (mockeando services)
+
+Ejecutar los tests:
+
+```bash
+npm run test
+```
+
  ---        
 ## Instalación
-- **Clonar repositorio**
- - git clone https://github.com/tu-usuario/deal-engine.git cd deal-engine
-- **Backend**
- - cd backend
- - npm install
-  - -crear archivo .env
-  - AMADEUS_API_KEY=tu_api_key
-  - AMADEUS_API_SECRET=tu_api_secret
-  - PORT=3000
-  - -Ejecutar: node src/app.js
-- **Frontend**
-  - cd frontend
-  - npm install
-  - -Ejecutar: npm run dev
+
+### Clonar repositorio
+
+```bash
+git clone https://github.com/tu-usuario/deal-engine.git
+cd deal-engine
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+```
+- Crear archivo `.env` con las siguientes variables:
+   - AMADEUS_API_KEY=tu_api_key
+   - AMADEUS_API_SECRET=tu_api_secret
+   - PORT=3000
+   - -Ejecutar:
+```bash
+node src/app.js
+```
+### Frontend
+   - cd frontend
+   - npm install
+   -Ejecutar:
+```bash
+npm run dev
+```
 ---   
 
-**Autora Agui Martínez**
+**Autora**
+Agui Martínez
