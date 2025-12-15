@@ -1,3 +1,30 @@
+/*
+Utils: Transform
+
+Responsabilidad:
+Este archivo actúa como una capa de utilidades encargada de transformar
+los datos crudos recibidos desde la API de Amadeus a un formato estándar
+
+
+function transformFlightOffers
+    Recibe los datos crudos devueltos por la API de Amadeus
+   Si no existen datos válidos, retorna un arreglo vacío
+   Extrae la información del primer itinerario
+   Unifica los segmentos del vuelo
+   Calcula:
+    Origen y destino
+    Aerolínea
+    Número de vuelo
+    Precio y moneda
+    Hora de salida y llegada
+    Duración total
+     Número de escalas
+    Asientos disponibles
+  Devuelve un arreglo de vuelos con formato estándar
+    
+*/ 
+
+
 
 export function transformFlightOffers(rawData) {
   if (!rawData || !rawData.data) {
@@ -54,7 +81,7 @@ export function transformFlightOffers(rawData) {
 }
 
 
-// Transforma un solo vuelo
+
 export function transformSingleFlight(raw) {
 
   return {};
