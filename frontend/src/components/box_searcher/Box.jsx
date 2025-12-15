@@ -1,7 +1,6 @@
 
 import { MdFlightTakeoff, MdOutlineFlightLand } from "react-icons/md";
 
-
 function Box({ texto, value, onChange }) {
 
     const mostrarCalendario = texto === "Ida" || texto === "Vuelta";

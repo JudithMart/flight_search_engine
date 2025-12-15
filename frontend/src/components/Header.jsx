@@ -1,8 +1,6 @@
 
 import { MdFlight } from "react-icons/md";
 import Searcher from './Searcher';
-
-
 import fondo from '../assets/Fondo.jpg';
 
 function Header({ searchParams, setSearchParams, onSearch }) {

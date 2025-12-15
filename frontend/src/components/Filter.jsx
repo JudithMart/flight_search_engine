@@ -7,13 +7,13 @@ function Filter({ filters, setFilters }) {
 
         <div>
           <label className="block text-sm font-medium text-[#11325f] mb-2">
-           Precio máximo: ${filters.maxPrice.toLocaleString()} 
+           Precio máximo:  €{filters.maxPrice.toLocaleString()} 
           </label>
           <input 
             type="range" 
             min="0" 
-            max="10000" 
-            step="100"
+            max="500" 
+            step="10"
             value={filters.maxPrice}
             onChange={(e) => setFilters({...filters, maxPrice: parseInt(e.target.value)})}
             className="w-full accent-[#5161c0]" 
@@ -31,10 +31,13 @@ function Filter({ filters, setFilters }) {
             className="w-full border border-gray-300 rounded-lg p-2 text-[#11325f] focus:ring-2 focus:ring-[#5161c0] focus:border-transparent"
           >
             <option value="">Todas</option>
-            <option value="AM">Aeroméxico</option>
-            <option value="Y4">Volaris</option>
-            <option value="VB">VivaAerobus</option>
-            <option value="Interjet">Interjet</option>
+            <option value="AM">Aeroméxico (AM)</option>
+            <option value="Y4">Volaris (Y4)</option>
+            <option value="VB">VivaAerobus (VB)</option>
+            <option value="4O">Interjet (4O)</option>
+            <option value="F9">Frontier Airlines (F9)</option>
+            <option value="UA">United Airlines (UA)</option>
+            <option value="DL">Delta (DL)</option>
           </select>
         </div> 
 

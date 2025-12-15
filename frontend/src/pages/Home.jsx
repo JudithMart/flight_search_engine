@@ -9,11 +9,6 @@ Página principal Home
  Renderiza el header, filtros y las cards de resultados
 */
 
-import Filter from "../components/Filter"
-import Header from "../components/header"
-import Card from "../components/Card"
-import { useEffect, useState } from "react"
-
 function Home() {
   // Estado para los parámetros de búsqueda (origen, destino, fecha)
   const [searchParams, setSearchParams] = useState({
@@ -58,12 +53,18 @@ function Home() {
       // Realiza la petición al backend
       const response = await fetch(url)
 
-      if (!response.ok) {
-        throw new Error("Error al obtener vuelos")
-      }
+
 
       // Parsea la respuesta JSON
       const data = await response.json()
+
+      if (!response.ok) {
+        setError(data.message || "Error al obtener vuelos");
+        setFlights([]);
+        setFilteredFlights([]);
+        return;
+      }
+
 
       // Guarda los vuelos obtenidos
       setFlights(data)
@@ -72,9 +73,9 @@ function Home() {
     } catch (err) {
       // Manejo de errores
       console.error(err)
+      { err && <p className="text-[#cf443f] font-bold text-x2l">{err}</p> }
       setError("No se pudieron cargar los vuelos")
-      setFlights([])
-      setFilteredFlights([])
+      
     } finally {
       setLoading(false)
     }
@@ -147,7 +148,7 @@ function Home() {
           {/* Mensaje de carga */}
           {loading && <p className="text-[#3E4C99] font-bold text-2xl" >Cargando vuelos...</p>}
           {/* Mensaje de error */}
-          {error && <p className="text-[#cf443f] font-bold text-2xl">{error}</p>}
+          {error && <p className="text-[#cf443f] font-bold text-x2l">{error}</p>}
 
           {/* Lista de cards de vuelos */}
           {!loading && !error && filteredFlights.length > 0 && (
