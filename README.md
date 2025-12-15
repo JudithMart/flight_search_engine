@@ -25,7 +25,7 @@ aplicar filtros en el frontend y manejar errores de forma controlada.
 
 ## Arquitectura Backend (Node.js + Express)
 
-```text
+
 src/
 ├── controllers/
 │   └── flights.controller.js   # Validación de entrada y respuestas HTTP
@@ -41,9 +41,10 @@ src/
 ├── app.js
 └── server.js
 
+---
 ## Frontend (React + Tailwind)
 
-```text
+
 src/
 ├── components/
 │   ├── Header.jsx
@@ -55,34 +56,35 @@ src/
 └── assets/
 
 ## Flujo de la aplicación
-          **Usuario ingresa:**
-          Origen (IATA)
-          Destino (IATA)
-          Fecha
-          **Frontend hace request al backend**
-          **Backend**
-          Valida parámetros
-          Consulta Amadeus
-          Si falla → usa mock
-          Datos se transforman a formato estándar
-          **Frontend**
-          Renderiza cards
-          Aplica filtros locales
-          **Validaciones**
-          Backend 
-          Campos obligatorios
-          Códigos IATA válidos (3 letras)
-          Manejo de errores HTTP:
-            -400 Bad Request
-            -502 Bad Gateway
-            -500 Internal Server Error
-          **Testing**
-          Se implementaron tests unitarios usando Jest para:
-          -Transformación de datos (transformFlightOffers)
-          -Validación de escalas
-          -Validación de duración
-          -Controladores (mockeando services) -
-          -Ejecutar test **npm run test**
+  **Usuario ingresa:**
+            Origen (IATA)
+            Destino (IATA)
+            Fecha
+            **Frontend hace request al backend**
+            **Backend**
+            Valida parámetros
+            Consulta Amadeus
+            Si falla → usa mock
+            Datos se transforman a formato estándar
+            **Frontend**
+            Renderiza cards
+            Aplica filtros locales
+            **Validaciones**
+            Backend 
+            Campos obligatorios
+            Códigos IATA válidos (3 letras)
+            Manejo de errores HTTP:
+              -400 Bad Request
+              -502 Bad Gateway
+              -500 Internal Server Error
+            **Testing**
+            Se implementaron tests unitarios usando Jest para:
+            -Transformación de datos (transformFlightOffers)
+            -Validación de escalas
+            -Validación de duración
+            -Controladores (mockeando services) -
+            -Ejecutar test **npm run test**
+          
 ##Instalación
 -Clonar repositorio
 git clone https://github.com/tu-usuario/deal-engine.git cd deal-engine
