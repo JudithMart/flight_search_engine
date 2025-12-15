@@ -58,50 +58,50 @@ src/
 ```
 ---
 ## Flujo de la aplicación
- -**Usuario ingresa:**
- -Origen (IATA)
- -Destino (IATA)
- -Fecha
- -**Frontend hace request al backend**
--**Backend**
- -Valida parámetros
- -Consulta Amadeus
- -Si falla → usa mock
- -Datos se transforman a formato estándar
--**Frontend**
- -Renderiza cards
- -Aplica filtros locales
--**Validaciones**
--Backend 
--Campos obligatorios
--Códigos IATA válidos (3 letras)
--Manejo de errores HTTP:
- --400 Bad Request
- --502 Bad Gateway
- --500 Internal Server Error
--**Testing**
--Se implementaron tests unitarios usando Jest para:
- -Transformación de datos (transformFlightOffers)
- -Validación de escalas
- -Validación de duración
- -Controladores (mockeando services) -
- -Ejecutar test **npm run test**
+ - **Usuario ingresa:**
+ - Origen (IATA)
+ - Destino (IATA)
+ - Fecha
+ - **Frontend hace request al backend**
+- **Backend**
+ - Valida parámetros
+ - Consulta Amadeus
+ - Si falla → usa mock
+ - Datos se transforman a formato estándar
+- **Frontend**
+ - Renderiza cards
+ - Aplica filtros locales
+- **Validaciones**
+- Backend 
+- Campos obligatorios
+- Códigos IATA válidos (3 letras)
+- Manejo de errores HTTP:
+ - -400 Bad Request
+ - -502 Bad Gateway
+ - -500 Internal Server Error
+- **Testing**
+- Se implementaron tests unitarios usando Jest para:
+ - Transformación de datos (transformFlightOffers)
+ - Validación de escalas
+ - Validación de duración
+ - Controladores (mockeando services) -
+ - Ejecutar test **npm run test**
  ---        
-##Instalación
--**Clonar repositorio**
- -git clone https://github.com/tu-usuario/deal-engine.git cd deal-engine
--**Backend**
- -cd backend
- -npm install
-  --crear archivo .env
-  -AMADEUS_API_KEY=tu_api_key
-  -AMADEUS_API_SECRET=tu_api_secret
-  -PORT=3000
-  --Ejecutar: node src/app.js
--**Frontend**
-  -cd frontend
-  -npm install
-  --Ejecutar: npm run dev
+## Instalación
+- **Clonar repositorio**
+ - git clone https://github.com/tu-usuario/deal-engine.git cd deal-engine
+- **Backend**
+ - cd backend
+ - npm install
+  - -crear archivo .env
+  - AMADEUS_API_KEY=tu_api_key
+  - AMADEUS_API_SECRET=tu_api_secret
+  - PORT=3000
+  - -Ejecutar: node src/app.js
+- **Frontend**
+  - cd frontend
+  - npm install
+  - -Ejecutar: npm run dev
 ---   
 
 **Autora Agui Martínez**
