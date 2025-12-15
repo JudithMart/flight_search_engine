@@ -121,17 +121,21 @@ cd backend
 npm install
 ```
 - Crear archivo `.env` con las siguientes variables:
-   - AMADEUS_API_KEY=tu_api_key
-   - AMADEUS_API_SECRET=tu_api_secret
-   - PORT=3000
-   - -Ejecutar:
+```bash
+AMADEUS_API_KEY=tu_api_key
+AMADEUS_API_SECRET=tu_api_secret
+PORT=3000
+```
+Ejecutar
 ```bash
 node src/app.js
 ```
 ### Frontend
-   - cd frontend
-   - npm install
-   -Ejecutar:
+```bash
+cd frontend
+npm install
+```
+Ejecutar
 ```bash
 npm run dev
 ```
