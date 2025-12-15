@@ -140,6 +140,14 @@ Ejecutar
 npm run dev
 ```
 ---   
+## Referencias
+
+- Amadeus Developers – Multi-City Flight Search  
+  https://developers.amadeus.com/blog/multi-city-flight-search-amadeus-api
+
+- Amadeus Flight Offers API – Documentación oficial  
+  https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search
+---   
 
 **Autora**
 Agui Martínez
