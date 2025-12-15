@@ -2,6 +2,11 @@
 function Card({
   origin, destination, airline, n_flight, d_time, a_time, duration, cost, scales, currency
 }) {
+
+
+
+
+
   return (
     <div className="bg-white w-full shadow-md shadow-[#3E4C99] rounded-xl mb-10
     flex flex-col lg:flex-row items-center justify-between p-6 gap-6  lg:gap-10">
@@ -37,8 +42,9 @@ function Card({
 
       <div className="text-center lg:text-left w-full lg:w-auto">
         <p className="text-[#00B3A4] font-bold text-2xl">
-          {cost} {currency}
+          {currency === "EUR" ? "€" : "$"} {cost}
         </p>
+
       </div>
 
     </div>

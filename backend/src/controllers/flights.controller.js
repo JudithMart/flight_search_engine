@@ -29,7 +29,7 @@ function getFlightDetails
     400 BAD_REQUEST: id faltante
     500 INTERNAL_SERVER_ERROR: error interno
 
-*/ 
+*/
 
 export async function searchFlights(req, res) {
     try {
@@ -43,6 +43,16 @@ export async function searchFlights(req, res) {
 
         }
 
+        if (!/^[A-Z]{3}$/.test(origin) || !/^[A-Z]{3}$/.test(destination)) {
+            return res.status(400).json({
+                error: "INVALID_IATA_CODE",
+                message: "Origin y destination deben ser códigos IATA de 3 letras (ej. MEX, CUN)"
+            });
+        }
+
+
+
+
         const flights = await fetchFlights({ origin, destination, date, sort })
 
         return res.status(200).json(flights)
@@ -51,7 +61,7 @@ export async function searchFlights(req, res) {
         if (err.type === "EXTERNAL_API_ERROR") {
             return res.status(502).json({
                 error: "BAD_GATEWAY",
-                message: err.message
+                message: "Flight service temporarily unavailable"
             });
         }
 
@@ -60,31 +70,31 @@ export async function searchFlights(req, res) {
             message: "Unexpected server error"
         });
     }
-    }
+}
 
 
-    export async function getFlightDetails(req, res) {
-        try {
-            const { id } = req.params
+export async function getFlightDetails(req, res) {
+    try {
+        const { id } = req.params
 
-            if (!id) {
-                return res.status(400).json({ error: "Flight ID is required" })
-            }
-
-            const flight = await fetchFlightDetails(id);
-
-            return res.status(200).json(flight)
-        } catch (err) {
-            console.error("Error en getFlightsDetails: ", err)
-
-            return res.status(500).json({
-                error: "Server error FlightDetails",
-                message: err.message,
-
-            })
-
+        if (!id) {
+            return res.status(400).json({ error: "Flight ID is required" })
         }
+
+        const flight = await fetchFlightDetails(id);
+
+        return res.status(200).json(flight)
+    } catch (err) {
+        console.error("getFlightsDetails: ", err)
+
+        return res.status(500).json({
+            error: "FlightDetails error server",
+            message: err.message,
+
+        })
+
     }
+}
 
 
 
